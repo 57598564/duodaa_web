@@ -1,0 +1,120 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-chtml.min.js" id="MathJax-script" async></script>
+<script src='f.js' ></script>
+
+
+
+<title>欢迎来到哆嗒数学网，一个妙趣的数学世界</title>
+</head>
+
+<body>
+<center>
+<div id="Math_graph" style="width:600px;height:600px;"></div>
+<div id="fname" style="display:none; z-index:2; position:relative; left:100px; top:-200px;">$$x^2+y^2=1$$</div>
+<div style="position:relative; top:-100px;"><a style="text-decoration:none; font-family:'微软雅黑'; font-size:36px;" href="\blog" >进入博客</a></div>
+<center>
+
+
+<script>
+    Math_graph = document.getElementById('math-function');
+
+   function GetQueryString(name)
+	{
+		 var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+		 var r = window.location.search.substr(1).match(reg);
+		 if(r!=null)return  unescape(r[2]); return null;
+	}
+
+   rrd=GetQueryString("rd");
+   
+   
+	 for(var i = L; i < R; i += 0.05) {
+        x[j]= (R-L)*Math.random()+L;
+        y[j]= (T-B)*Math.random()+B ;
+		j=j+1;
+    }
+
+
+
+
+   Plotly.newPlot('Math_graph', [{
+		  x: x,
+		  y: y,
+		  mode: 'markers'
+  //line: {simplify: false},
+  
+	}]
+	,
+	{
+	  xaxis: {range: [L, R]},
+	  yaxis: {range: [L, R]}
+	}
+	
+	
+	);
+  
+if(rrd!=null)rd=parseInt(rrd);
+if(rrd==null)rd=Math.floor(Math.random()*f_names.length);
+//rd=9;
+
+ plot_parac_conf(f_names[rd]);
+
+    Plotly.animate('Math_graph', {
+    data: [
+	{
+		x: x,
+		y: y,
+	}
+	],
+    //traces: [0],
+    //layout: {}
+  }, 
+  {
+    transition: {
+      duration: 1000,
+      //easing: 'cubic-in-out'
+    },
+      frame: {
+          duration: 1000
+      }
+  });
+  
+  
+   Plotly.animate('Math_graph', {
+    data: [
+	{
+		x: x,
+		y: y,
+		mode:"lines"
+	}
+	],
+    //traces: [0],
+    layout: {t:0}
+  }, 
+  {
+    transition: {
+      duration: 1000,
+      //easing: 'cubic-in-out'
+    },
+      frame: {
+          duration: 1000
+      }
+  });
+	
+	
+	
+	$("#fname").html("$$"+f_display+"$$");
+	
+	$("#fname").show(1500);
+
+</script>
+
+
+</body>
+</html>
