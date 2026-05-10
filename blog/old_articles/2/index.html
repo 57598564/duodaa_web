@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+
+<html class="no-js">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"/>
+<meta content="webkit" name="renderer"/>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
+<title>柯西函数方程和选择公理 - 哆嗒数学网·博客</title>
+<!-- 使用url函数转换相关路径 -->
+<!--[if lt IE 9]>
+    
+    
+    <![endif]-->
+<!-- 通过自有函数输出HTML头部信息 -->
+<meta content="柯西函数方程的问题，就是问如果一个实函数f(x)，对任意实数x,y都满足f(x+y)=f(x)+f(y)。那么这样的函数是什么？&amp;nbsp;&amp;nbsp;有些人马上会不假思索的回答，这是一个线性函..." name="description"/>
+<meta content="数学,可测函数,实变函数,连续" name="keywords"/>
+<meta content="Typecho 1.0/14.10.10" name="generator"/>
+<meta content="duodaa_style" name="template"/>
+<!--MathJax 加载代码 -->
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            extensions: ["tex2jax.js","asciimath2jax.js","TeX/AMSmath.js","Tex/AMSsymbols.js","MathMenu.js","MathZoom.js"],
+            jax: ["input/TeX","output/HTML-CSS"],
+            tex2jax: {
+              inlineMath: [ ['$','$']],
+              displayMath: [ ],
+              processEscapes: true
+            },
+              //"HTML-CSS": { availableFonts:["TeX"], preferredFont: null, webFont: null }
+            "HTML-CSS": { availableFonts: ["TeX"] }
+          });
+    </script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<!--MathJax 加载代码（完） -->
+<style>body {
+    background: #f7f9fc;
+    color: #2b2f36;
+    font-family: "Segoe UI", "Noto Sans", "Helvetica Neue",
+                 Arial, "PingFang SC", "Hiragino Sans GB",
+                 "Microsoft YaHei", sans-serif;
+    line-height: 1.75;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 5px 5px;
+}
+
+article{    text-align: center;
+}
+
+.post-title{padding: 0;
+    margin-bottom: 0.1em;
+
+}
+
+
+.post-title a{
+  color: #1f2a44;
+    font-weight: 650;
+    line-height: 1.3;
+    margin-top: 1.8em;
+    padding: 0;
+    font-size: 2rem;
+    text-decoration: none;
+    
+
+}
+
+img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.site-name.col-mb-12.col-9 a{
+  color: #1f2a44;
+  font-weight: bold;
+  font-size: 1.6rem;
+  text-decoration: none;
+}
+
+.description{
+  color: #1f2a44;
+  font-size: 1.1rem;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+.post-meta {
+  list-style: none; 
+  display: flex;
+  justify-content: center; 
+  gap: 20px; 
+  padding: 0;
+  margin: 0;
+
+}
+
+.post-meta li{
+      font-size: 0.9rem;
+      color: #2b2f36;
+      margin: 0;
+  padding: 0;
+
+}
+
+.post-meta li a{
+      text-decoration: none;
+
+      font-size: 0.9rem;
+      color: #2b2f36;
+      margin: 0;
+  padding: 0;
+
+}
+
+.post-content{
+  text-align: left;
+}</style></head>
+<body>
+<!--[if lt IE 8]>
+    <div class="browsehappy" role="dialog">当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.</div>
+<![endif]-->
+<header class="clearfix" id="header">
+<div class="container">
+<div class="row">
+<div class="site-name col-mb-12 col-9">
+<a href="http://duodaa.com/blog/" id="logo">
+                                        哆嗒数学网·博客                </a>
+<p class="description">数学趣闻大箩筐</p>
+</div>
+
+<div class="col-mb-12">
+</div>
+</div><!-- end .row -->
+</div>
+</header><!-- end #header -->
+<div id="body">
+<div class="container">
+<div class="row">
+<div class="col-mb-12 col-8" id="main" role="main">
+<article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+<h1 class="post-title" itemprop="name headline"><a href="http://duodaa.com/blog/index.php/archives/2/" itemtype="url">柯西函数方程和选择公理</a></h1>
+<ul class="post-meta">
+<li itemprop="author" itemscope="" itemtype="http://schema.org/Person">作者: <a href="javascript:void(0)" itemprop="name" rel="author">DuodaaMaster</a></li>
+<li>时间: <time datetime="2014-03-17T21:37:00+00:00" itemprop="datePublished">March 17, 2014</time></li>
+
+</ul>
+<div class="post-content" itemprop="articleBody">
+<div><span style="font-size: 13px;">柯西函数方程的问题，就是问如果一个实函数f(x)，对任意实数x,y都满足f(x+y)=f(x)+f(y)。那么这样的函数是什么？</span></div>
+<div> </div>
+<div> </div>
+<div><span style="font-size: 13px;">有些人马上会不假思索的回答，这是一个线性函数，而且是一条过原点的直线，f(x)=ax, 其中a=f(1)。如果多问一句为什么，他们之中也会很熟练的给出“证明”， 但你会发现，他们会自然而不自然的用到下面的条件。</span></div>
+<div> </div>
+<div> </div>
+<div><span style="font-size: 13px;">条件1:  f(x)是连续函数</span></div>
+<div><span style="font-size: 13px;">条件2:  f(x)是可导函数</span></div>
+<div><span style="font-size: 13px;">条件3:  f(x)在个别点是连续</span></div>
+<div><span style="font-size: 13px;">条件4：f(x)在某个区间上有界</span></div>
+<div><span style="font-size: 13px;">条件5：f(x)在(在某个区间)单调</span></div>
+<div> </div>
+<div><span style="font-size: 13px;">没有这上面的条件，这些同学就很难证下去了。</span></div>
+<div> </div>
+<div> </div>
+<div><span style="font-size: 13px;">的确是这样，其实对于满足这样条件的函数来讲，前文说的5个条件都是等价的。实际上有朋友列出了更多的等价情形，这里我就不再多讲，大家自己去找贴子吧。我这里再说一个重要的等价条件，关于可测的（可测是专业词汇，不懂没关系不是重点）。</span></div>
+<div> </div>
+<div> </div>
+<div><span style="font-size: 13px;">条件6： f(x)是一个勒贝格可测函数。</span></div>
+<div> </div>
+<div> </div>
+<div><span style="font-size: 13px;">啊，有人可能会没有耐心了：“废话那么多，你倒给个不连续的例子呀！”</span></div>
+<div> </div>
+<div> </div>
+<div><span style="font-size: 13px;">咳咳！我还要继续多几句废话。这个例子，可以说能给，也可以说不能给。因为这和数学中的一条公理有关系——选择公理。在数学里选择公理是一条非常神奇的公理，它的大意是说如果有很多集合(可能有无穷多个)，每个集合里都有东西(即非空)，那么我可以从每个集合论抓取一个元素组成新的集合。</span></div>
+<div> </div>
+<div><span style="font-size: 13px;">这似乎是一条看似显然应该成立的公理。你会说随便抓啊！我会问怎么个随便法？你会再强调，随便就是随便啊！我再问，有多随便？实际上，这个公理导出的一些推论让一些人“三观尽毁”！我们之所以觉得应该是真的，是因为大部分人会把有限世界的经验和感觉直接移植到无穷世界，这有事时候会出问题。</span></div>
+<div> </div>
+<div><span style="font-size: 13px;">选择公理能做出一种看似违反物理定律的操作(巴拿赫-塔尔斯基悖论)，一个皮球，切上几刀，把切好的碎片重新拼接组合，最终能拼接处和之前大小一模一样的两个皮球。另外，选择公理能把任何集合排成良序——一种其中任意元素都可比较大小且任何子集都有最小值顺序。这让我想起我在一本集合论的专业教材上，书的作者幽默留下字句：“Show me the well-ordering on R, somebody cry!”(有人会叫嚣，你把实数的一个良序写出来给我瞅瞅！)。是的，是的，我写不出来，也没有人类能写出来。</span></div>
+<div> </div>
+<div><span style="font-size: 13px;">罗素对选择公理有个有意思的比喻：“如果有无穷多双鞋，我可以告诉你都选左脚的那只；但如果是无穷双袜子，我们应该怎么选呢？”</span></div>
+<div> </div>
+<div><span style="font-size: 13px;">尽管有一些反直觉的推论，绝大部分数学家还是相信选择公理是真的。</span></div>
+<div> </div>
+<div><span style="font-size: 13px;">选择公理在线性空间理论里能得到一个很强大的结论——任何线性空间都有基，有的书还特别强调是代数意义下的基，叫做Hamel基。</span></div>
+<div> </div>
+<div><span style="font-size: 13px;">我们来回顾一些线性代数的知识。数域F上线性空间的基，是这样一个集合B。对空间中的任何一个元素r，我们都可以从B中找到有限个元素b(1)，b(2),...,b(n), 和相同数量的数域F中非零的元素f(1),f(2),...,f(n)，r能写成r=f(1)b(1)+f(2)b(2)+f(n)b(n)。而且这种写法还是唯一的。（这和你手里的线性代数书的表述可能不一样，但是你不用怀疑表述的等价性）</span></div>
+<div> </div>
+<div><span style="font-size: 13px;">上诉B中元素的个数，叫做这个线性空间的维数。</span></div>
+<div> </div>
+<div><span style="font-size: 13px;">我们还知道，一个空间是多少维的和我们把他看成哪个数域上的空间有关系。比如复数，如果看到复数域上的线性空间就是一维的,任何一个非零单点集合都是这个空间的基，而在实数域上看是二维的，{1,i}是一组基。</span></div>
+<div><span style="font-size: 13px;">     </span></div>
+<div> </div>
+<div><span style="font-size: 13px;">于是我问，如果把实数集合看成有理数域上的线性空间，那么这个空间有基吗？ 选择公理说，有！那基长什么样，选择公理说，不告诉你！——但我们可以肯定这个基有无穷多的元素，这个空间是无限维的。但无论怎么样，也没有人能把这个基很清楚的呈现出来。但有了这个基，我们就能造出不连续的例子了。</span></div>
+<div> </div>
+<div><span style="font-size: 13px;">对于任何一个实数r，我们都可以从这个基中找到有限个元素b(1)，b(2),...,b(n), 和相同数量的非零有理数q(1),q(2),...,q(n)，最终把r写成r=q(1)b(1)+q(2)b(2)+q(n)b(n)。而且这种写法是唯一的。</span></div>
+<div> </div>
+<div><span style="font-size: 13px;">现在我们来“构造”函数了。我们在这个基中定位一个具体的元素t，那么对于某个实数x，他写成的样子有可能是x=q·t+q(1)b(1)+q(2)b(2)+q(n)b(n)，就是t前面有个有理数系数q。也有可能写成的结果里，根本没有t。那么前者情况，我们令f(x)=q, 后一种情况我们令f(x)=0。因为表示方式是唯一的，你可以验证，这样定义的函数f(x)的确满足对所有实数x,y，有f(x+y)=f(x)+f(y)。</span></div>
+<div> </div>
+<div><span style="font-size: 13px;">这个函数的确满足我们想要的性质，但我无法告诉是f(1)等于多少，f(e)等于多少，f(π)等于多少。</span></div>
+<div> </div>
+<div><span style="font-size: 13px;">     有人会说，你用选择公理做出的东西太奇怪，难道不用选择公理做不出这种不连续的例子吗？</span></div>
+<div> </div>
+<div><span style="font-size: 13px;">      似乎下面的文字会让有的人更崩溃的。</span></div>
+<div> </div>
+<div> </div>
+<div><span style="font-size: 13px;">      回忆一下实变函数的课程内容(如果你学过的话，当然这是一门很变态的课)。我们曾经“构造”过不可测的集合，但如果你能回忆起每一个细节话，你会很失望，这样集合的构造，也用到了那个“无所不能”的选择公理。实际上数学界的大牛告诉我们，在ZF下是没有办法推出或者推翻不可测的集合是不是存在的。下面的东东，也能构成一个没有矛盾的体系(数理逻辑中叫“自洽”)：</span></div>
+<div> </div>
+<div> </div>
+<div><span style="font-size: 13px;">      "ZF体系" + "所有实数子集都可测"。</span></div>
+<div> </div>
+<div> </div>
+<div><span style="font-size: 13px;">      刚才说的条件6，记得吗。不可测的函数是因为不可测集合存在才存在的。于是，在这个体系下，所有函数都可测了，于是满足柯西函数方程的函数在这个体系下就都连续了。</span></div>
+<div> </div>
+<div> </div>
+<div><strong><span style="font-size: 13px;">附： f(x)为可测实函数，若对任意实数x,y,有f(x+y)=f(x)+f(y)，则f(x)=f(1)x为线性函数。</span></strong></div>
+<div><span style="font-size: 13px;">证明：令g(x)=f(x)−xf(1)，则对任意实数x,y，有g(x+y)=g(x)+g(y)。现在证g(x)=0。</span></div>
+<div><span style="font-size: 13px;">易见对任何有理数q有f(q)=qf(1)，于是g(q)=0。</span></div>
+<div><span style="font-size: 13px;">令A={x : g(x)&gt;0}，B={x : g(x)&lt;0}，则A，B都可测。</span></div>
+<div><span style="font-size: 13px;">注意A=−B，于是A，B有相同测度，即m(A)=m(B)。</span></div>
+<div> </div>
+<div><span style="font-size: 13px;">若m(A)=m(B)&gt;0，由这里的证明有，A−B=A+A包含一区间(实变经典定理，正测度集合代数和包含区间)，于是包含一有理数，</span></div>
+<div><span style="font-size: 13px;">取s∈A,t∈B，满足s−t=r为一有理数，则有</span></div>
+<div><span style="font-size: 13px;">0=g(r)=g(s−t)=g(s)−g(t)&gt;0，矛盾。</span></div>
+<div> </div>
+<div><span style="font-size: 13px;">于是只能m(A)=m(B)=0，得到L = {x : g(x)=0} 为零测度集的余集。</span></div>
+<div><span style="font-size: 13px;">若有实数a，使得g(a)&gt;0，观察集合:</span></div>
+<div><span style="font-size: 13px;">C = {x : g(x−a)=0} = {x : g(x)=g(a)}</span></div>
+<div><span style="font-size: 13px;">中间集合表达式，说明C=a+L是一个零测度集的余集。</span></div>
+<div><span style="font-size: 13px;">右边的集合表达式，因为g(a)&gt;0，说明C是A的子集，是一个零测集。</span></div>
+<div><span style="font-size: 13px;">矛盾</span></div>
+<div><span style="font-size: 13px;">若有g(a)&lt;0,则g(-a)&gt;0,亦有矛盾</span></div>
+<div><span style="font-size: 13px;">于是g(x)=0</span></div>
+<div> </div>
+<div><span style="font-size: 13px;"> </span></div>
+</div>
+
+</article>
+
+
+</div><!-- end #main-->
+<!-- end #sidebar -->
+</div><!-- end .row -->
+</div>
+</div><!-- end #body -->
+<!-- end #footer -->
+<!-- 百度统计代码 -->
+<!-- 百度统计代码(完) -->
+</body>
+</html>

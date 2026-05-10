@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+
+<html class="no-js">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"/>
+<meta content="webkit" name="renderer"/>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
+<title>2025春晚魔术数学解读(两种方法)：排列穷举VS逻辑推理 - 哆嗒数学网·博客</title>
+<!-- 使用url函数转换相关路径 -->
+<!--[if lt IE 9]>
+    
+    
+    <![endif]-->
+<!-- 通过自有函数输出HTML头部信息 -->
+<meta content="关注&amp;nbsp;哆嗒数学网&amp;nbsp;每天获得更多数学趣文&amp;nbsp;这回春晚刘谦的魔术又来了，还是数学魔术，甚至还为小尼推广起了数学书。哈哈哈哈哈哈哈哈哈。&amp;nbsp;第一步：任意打乱顺序。这..." name="description"/>
+<meta content="Typecho 1.0/14.10.10" name="generator"/>
+<meta content="duodaa_style" name="template"/>
+<!--MathJax 加载代码 -->
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            extensions: ["tex2jax.js","asciimath2jax.js","TeX/AMSmath.js","Tex/AMSsymbols.js","MathMenu.js","MathZoom.js"],
+            jax: ["input/TeX","output/HTML-CSS"],
+            tex2jax: {
+              inlineMath: [ ['$','$']],
+              displayMath: [ ],
+              processEscapes: true
+            },
+              //"HTML-CSS": { availableFonts:["TeX"], preferredFont: null, webFont: null }
+            "HTML-CSS": { availableFonts: ["TeX"] }
+          });
+    </script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<!--MathJax 加载代码（完） -->
+<style>body {
+    background: #f7f9fc;
+    color: #2b2f36;
+    font-family: "Segoe UI", "Noto Sans", "Helvetica Neue",
+                 Arial, "PingFang SC", "Hiragino Sans GB",
+                 "Microsoft YaHei", sans-serif;
+    line-height: 1.75;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 5px 5px;
+}
+
+article{    text-align: center;
+}
+
+.post-title{padding: 0;
+    margin-bottom: 0.1em;
+
+}
+
+
+.post-title a{
+  color: #1f2a44;
+    font-weight: 650;
+    line-height: 1.3;
+    margin-top: 1.8em;
+    padding: 0;
+    font-size: 2rem;
+    text-decoration: none;
+    
+
+}
+
+img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.site-name.col-mb-12.col-9 a{
+  color: #1f2a44;
+  font-weight: bold;
+  font-size: 1.6rem;
+  text-decoration: none;
+}
+
+.description{
+  color: #1f2a44;
+  font-size: 1.1rem;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+.post-meta {
+  list-style: none; 
+  display: flex;
+  justify-content: center; 
+  gap: 20px; 
+  padding: 0;
+  margin: 0;
+
+}
+
+.post-meta li{
+      font-size: 0.9rem;
+      color: #2b2f36;
+      margin: 0;
+  padding: 0;
+
+}
+
+.post-meta li a{
+      text-decoration: none;
+
+      font-size: 0.9rem;
+      color: #2b2f36;
+      margin: 0;
+  padding: 0;
+
+}
+
+.post-content{
+  text-align: left;
+}</style></head>
+<body>
+<!--[if lt IE 8]>
+    <div class="browsehappy" role="dialog">当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.</div>
+<![endif]-->
+<header class="clearfix" id="header">
+<div class="container">
+<div class="row">
+<div class="site-name col-mb-12 col-9">
+<a href="http://duodaa.com/blog/" id="logo">
+                                        哆嗒数学网·博客                </a>
+<p class="description">数学趣闻大箩筐</p>
+</div>
+
+<div class="col-mb-12">
+</div>
+</div><!-- end .row -->
+</div>
+</header><!-- end #header -->
+<div id="body">
+<div class="container">
+<div class="row">
+<div class="col-mb-12 col-8" id="main" role="main">
+<article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+<h1 class="post-title" itemprop="name headline"><a href="http://duodaa.com/blog/index.php/archives/2504/" itemtype="url">2025春晚魔术数学解读(两种方法)：排列穷举VS逻辑推理</a></h1>
+<ul class="post-meta">
+<li itemprop="author" itemscope="" itemtype="http://schema.org/Person">作者: <a href="javascript:void(0)" itemprop="name" rel="author">DuodaaMaster</a></li>
+<li>时间: <time datetime="2025-01-30T17:52:54+00:00" itemprop="datePublished">January 30, 2025</time></li>
+
+</ul>
+<div class="post-content" itemprop="articleBody">
+<p data-track="1" style='box-sizing: border-box; margin-right: 0px; margin-bottom: 20px; margin-left: 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify; margin-top: 0px !important;'><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; letter-spacing: 1px;"><span style="box-sizing: border-box; font-weight: 700; margin: 0px; padding: 0px; border: 0px;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; color: rgb(51, 102, 255); --tt-darkmode-color: #3366FF;">关注 </span><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; color: rgb(255, 0, 0); --tt-darkmode-color: #FF0C00;">哆嗒数学网</span> <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; color: rgb(51, 102, 255); --tt-darkmode-color: #3366FF;">每天获得更多数学趣文</span></span></span></p>
+<p class="pgc-p syl-page-br" data-track="39" style='box-sizing: border-box; margin: 18px 0px; padding: 0px; border: 0px; height: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'> </p>
+<p data-track="40" style='box-sizing: border-box; margin: 20px 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; letter-spacing: 1px;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 0, 0); --tt-darkmode-color: #A3A3A3;">这回春晚刘谦的魔术又来了，还是数学魔术，甚至还为小尼推广起了数学书。哈哈哈哈哈哈哈哈哈。</span></span></p>
+<div class="pgc-img" style='box-sizing: border-box; margin: 18px 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'><img class="syl-page-img" image_type="1" img_height="603" img_width="1080" mime_type="image/png" src="https://p3-sign.toutiaoimg.com/tos-cn-i-axegupay5k/3f272f9498224c9498ba3211edfb8f2d~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1738835534&amp;x-signature=3bONLwmSBol6Ey60xwCCaRCFxN8%3D" style="box-sizing: border-box; border: 0px; margin: 0px auto 8px; padding: 0px; max-width: 100%; display: block; border-radius: 4px; cursor: zoom-in; height: auto;" web_uri="tos-cn-i-6w9my0ksvp/e8cf677701a54b81a8cd86b7d9cff317"/>
+<p class="pgc-img-caption" style="box-sizing: border-box; margin-top: 20px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; padding: 0px; border: 0px;"> </p>
+</div>
+<p data-track="3" style='box-sizing: border-box; margin: 20px 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; letter-spacing: 1px;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 0, 0); --tt-darkmode-color: #A3A3A3;">第一步：任意打乱顺序。</span></span></p>
+<p data-track="4" style='box-sizing: border-box; margin: 20px 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; letter-spacing: 1px;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 0, 0); --tt-darkmode-color: #A3A3A3;">这一步随便，因为无论你怎么打乱，之后按照他的办法一定会调整成他想要的顺序。</span></span></p>
+<p class="syl-page-br" data-track="5" style='box-sizing: border-box; margin: 18px 0px; padding: 0px; border: 0px; height: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'> </p>
+<p data-track="6" style='box-sizing: border-box; margin: 20px 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; letter-spacing: 1px;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 0, 0); --tt-darkmode-color: #A3A3A3;">第二步：筷子和左边的东西互换，如果筷子已经在左边不做操作</span></span></p>
+<div class="pgc-img" style='box-sizing: border-box; margin: 18px 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'><img class="syl-page-img" image_type="1" img_height="599" img_width="1080" mime_type="image/png" src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/576de77605c048f499962ddf9344728a~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1738835534&amp;x-signature=Izh9MIb8me008ZlfwyHQ%2FiVbKrM%3D" style="box-sizing: border-box; border: 0px; margin: 0px auto 8px; padding: 0px; max-width: 100%; display: block; border-radius: 4px; cursor: zoom-in; height: auto;" web_uri="tos-cn-i-6w9my0ksvp/576de77605c048f499962ddf9344728a"/>
+<p class="pgc-img-caption" style="box-sizing: border-box; margin-top: 20px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; padding: 0px; border: 0px;"> </p>
+</div>
+<p data-track="7" style='box-sizing: border-box; margin: 20px 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; letter-spacing: 1px;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 0, 0); --tt-darkmode-color: #A3A3A3;">这一步会出现两种情况：</span></span></p>
+<p data-track="8" style='box-sizing: border-box; margin: 20px 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; letter-spacing: 1px;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 0, 0); --tt-darkmode-color: #A3A3A3;">情况1：之前筷子在中间或左边，这步操作完了以后，筷子会在最左边。这个时候，杯子只能是中间和右边位置之一。即：</span></span></p>
+<p data-track="9" style='box-sizing: border-box; margin: 20px 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; letter-spacing: 1px;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 0, 0); --tt-darkmode-color: #A3A3A3;">情况1.1：筷子、杯子、勺子</span></span></p>
+<p data-track="10" style='box-sizing: border-box; margin: 20px 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; letter-spacing: 1px;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 0, 0); --tt-darkmode-color: #A3A3A3;">情况1.2：筷子、勺子、杯子</span></span></p>
+<p class="syl-page-br" data-track="11" style='box-sizing: border-box; margin: 18px 0px; padding: 0px; border: 0px; height: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'> </p>
+<p data-track="12" style='box-sizing: border-box; margin: 20px 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; letter-spacing: 1px;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 0, 0); --tt-darkmode-color: #A3A3A3;">情况2：如果之前筷子在最右边，那么这步结束后筷子会在中间。这里又会出现两种更分支的情况：</span></span></p>
+<p data-track="13" style='box-sizing: border-box; margin: 20px 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; letter-spacing: 1px;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 0, 0); --tt-darkmode-color: #A3A3A3;">情况2.1：对应的情况是勺子、筷子、杯子</span></span></p>
+<p data-track="14" style='box-sizing: border-box; margin: 20px 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; letter-spacing: 1px;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 0, 0); --tt-darkmode-color: #A3A3A3;">情况2.2：对应的情况是杯子、筷子，勺子</span></span></p>
+<p class="syl-page-br" data-track="15" style='box-sizing: border-box; margin: 18px 0px; padding: 0px; border: 0px; height: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'> </p>
+<p data-track="17" style='box-sizing: border-box; margin: 20px 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; letter-spacing: 1px;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 0, 0); --tt-darkmode-color: #A3A3A3;">第三步：杯子跟右边的东西互换，如果杯子已经在右边则不做操作。</span></span></p>
+<div class="pgc-img" style='box-sizing: border-box; margin: 18px 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'><img class="syl-page-img" image_type="1" img_height="602" img_width="1080" mime_type="image/png" src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/0b108a21931c4e3eba7e22bd05e4eebc~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1738835534&amp;x-signature=r%2BOIAceWRfTXYpQq8rB79S%2FUY7c%3D" style="box-sizing: border-box; border: 0px; margin: 0px auto 8px; padding: 0px; max-width: 100%; display: block; border-radius: 4px; cursor: zoom-in; height: auto;" web_uri="tos-cn-i-6w9my0ksvp/0b108a21931c4e3eba7e22bd05e4eebc"/>
+<p class="pgc-img-caption" style="box-sizing: border-box; margin-top: 20px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; padding: 0px; border: 0px;"> </p>
+</div>
+<p data-track="18" style='box-sizing: border-box; margin: 20px 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; letter-spacing: 1px;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 0, 0); --tt-darkmode-color: #A3A3A3;">这一步结束后，在第二步出现的如果是情况1的状态，那么结束的排列就是：筷子、勺子、杯子</span></span></p>
+<p class="syl-page-br" data-track="19" style='box-sizing: border-box; margin: 18px 0px; padding: 0px; border: 0px; height: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'> </p>
+<p data-track="20" style='box-sizing: border-box; margin: 20px 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; letter-spacing: 1px;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 0, 0); --tt-darkmode-color: #A3A3A3;">对于第二步对应的情况2的，会出现两种可能的情况：</span></span></p>
+<p data-track="21" style='box-sizing: border-box; margin: 20px 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; letter-spacing: 1px;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 0, 0); --tt-darkmode-color: #A3A3A3;">情况3.1：第二步是以2.1结束时，这轮不操作，结束后排列会是：勺子、筷子、杯子</span></span></p>
+<p data-track="22" style='box-sizing: border-box; margin: 20px 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; letter-spacing: 1px;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 0, 0); --tt-darkmode-color: #A3A3A3;">情况3.2：第二步是以2.2结束时，这轮结束后排列会是：筷子、杯子、勺子</span></span></p>
+<p class="syl-page-br" data-track="23" style='box-sizing: border-box; margin: 18px 0px; padding: 0px; border: 0px; height: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'> </p>
+<p data-track="25" style='box-sizing: border-box; margin: 20px 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; letter-spacing: 1px;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 0, 0); --tt-darkmode-color: #A3A3A3;">第四步：勺子跟左边的东西互换，如果勺子已经在左边则不做操作。</span></span></p>
+<div class="pgc-img" style='box-sizing: border-box; margin: 18px 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'><img class="syl-page-img" image_type="1" img_height="606" img_width="1080" mime_type="image/png" src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/8a7d22c7efc8465089ca77dfe8c28902~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1738835534&amp;x-signature=%2BYfi9RkTseo%2FQvxrl9s7t0jqGqw%3D" style="box-sizing: border-box; border: 0px; margin: 0px auto 8px; padding: 0px; max-width: 100%; display: block; border-radius: 4px; cursor: zoom-in; height: auto;" web_uri="tos-cn-i-6w9my0ksvp/8a7d22c7efc8465089ca77dfe8c28902"/>
+<p class="pgc-img-caption" style="box-sizing: border-box; margin-top: 20px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; padding: 0px; border: 0px;"> </p>
+</div>
+<p data-track="26" style='box-sizing: border-box; margin: 20px 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; letter-spacing: 1px;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 0, 0); --tt-darkmode-color: #A3A3A3;">这步结束后：就有两种情况，分别是</span></span></p>
+<p data-track="27" style='box-sizing: border-box; margin: 20px 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; letter-spacing: 1px;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 0, 0); --tt-darkmode-color: #A3A3A3;">最终排列1：勺子、筷子、杯子</span></span></p>
+<p data-track="28" style='box-sizing: border-box; margin: 20px 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; letter-spacing: 1px;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 0, 0); --tt-darkmode-color: #A3A3A3;">最终排列2：筷子、勺子、杯子</span></span></p>
+<p class="syl-page-br" data-track="29" style='box-sizing: border-box; margin: 18px 0px; padding: 0px; border: 0px; height: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'> </p>
+<p data-track="30" style='box-sizing: border-box; margin: 20px 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; letter-spacing: 1px;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 0, 0); --tt-darkmode-color: #A3A3A3;">最后两步：最后杯子始终在右手边，你可以举杯畅饮啦！</span></span></p>
+<div class="pgc-img" style='box-sizing: border-box; margin: 18px 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'><img class="syl-page-img" image_type="1" img_height="597" img_width="1080" mime_type="image/png" src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/3a8bac326c2e48a8a3742ac96a07cbd8~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1738835534&amp;x-signature=MLlIjMeD9z9xxprGbjx5CE31a5w%3D" style="box-sizing: border-box; border: 0px; margin: 0px auto 8px; padding: 0px; max-width: 100%; display: block; border-radius: 4px; cursor: zoom-in; height: auto;" web_uri="tos-cn-i-6w9my0ksvp/3a8bac326c2e48a8a3742ac96a07cbd8"/>
+<p class="pgc-img-caption" style="box-sizing: border-box; margin-top: 20px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; padding: 0px; border: 0px;"> </p>
+</div>
+<div class="pgc-img" style='box-sizing: border-box; margin: 18px 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'><img class="syl-page-img" image_type="1" img_height="593" img_width="1080" mime_type="image/png" src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/3198347d9a0347ac8d00d14046ea1020~tplv-tt-origin-web:gif.jpeg?_iz=58558&amp;from=article.pc_detail&amp;lk3s=953192f4&amp;x-expires=1738835534&amp;x-signature=Gx01qoLBIKt82o1utChoKBCB%2Bt8%3D" style="box-sizing: border-box; border: 0px; margin: 0px auto 8px; padding: 0px; max-width: 100%; display: block; border-radius: 4px; cursor: zoom-in; height: auto;" web_uri="tos-cn-i-6w9my0ksvp/3198347d9a0347ac8d00d14046ea1020"/>
+<p class="pgc-img-caption" style="box-sizing: border-box; margin-top: 20px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; padding: 0px; border: 0px;"> </p>
+</div>
+<p data-track="32" style='box-sizing: border-box; margin: 20px 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; letter-spacing: 1px;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 0, 0); --tt-darkmode-color: #A3A3A3;">当然我们有一种更数学的方式证明杯子在最右边。下面是纯逻辑描述，有点简略，需要思考后想通理顺。</span></span></p>
+<p class="syl-page-br" data-track="33" style='box-sizing: border-box; margin: 18px 0px; padding: 0px; border: 0px; height: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'> </p>
+<p data-track="34" style='box-sizing: border-box; margin: 20px 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; letter-spacing: 1px;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 0, 0); --tt-darkmode-color: #A3A3A3;">第三步结束后，杯子的位置只能在中间或者右边(想想为什么？).</span></span></p>
+<p data-track="35" style='box-sizing: border-box; margin: 20px 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; letter-spacing: 1px;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 0, 0); --tt-darkmode-color: #A3A3A3;">如果杯子已经在最右，第四步不影响杯子位置是显然的，这时已经产生最终排列。</span></span></p>
+<p data-track="36" style='box-sizing: border-box; margin: 20px 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify;'><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; letter-spacing: 1px;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; color: rgb(0, 0, 0); --tt-darkmode-color: #A3A3A3;">如果杯子在中间，第四步导致杯子不在最右的排列只能是：勺子、杯子、筷子。但这个排列是不可能的。如若不然，第二步结束后筷子只能在左边和中间。第三步不可能让筷子右移，所以筷子在这一步结束后还在左边或者中间。但依照假设，筷子必须在最右边，于是矛盾了。</span></span></p>
+<p class="syl-page-br" data-track="37" style='box-sizing: border-box; margin: 18px 0px; padding: 0px; border: 0px; height: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: center;'> </p>
+<p data-track="38" style='box-sizing: border-box; margin-top: 20px; margin-right: 0px; margin-left: 0px; padding: 0px; border: 0px; color: rgb(34, 34, 34); font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif; font-size: 18px; text-align: justify; margin-bottom: 0px !important;'><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; letter-spacing: 1px;"><span style="box-sizing: border-box; font-weight: 700; margin: 0px; padding: 0px; border: 0px;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; color: rgb(51, 102, 255); --tt-darkmode-color: #3366FF;">关注 </span><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; color: rgb(255, 0, 0); --tt-darkmode-color: #FF0C00;">哆嗒数学网</span> <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; color: rgb(51, 102, 255); --tt-darkmode-color: #3366FF;">每天获得更多数学趣文</span></span></span></p>
+</div>
+
+</article>
+
+
+</div><!-- end #main-->
+<!-- end #sidebar -->
+</div><!-- end .row -->
+</div>
+</div><!-- end #body -->
+<!-- end #footer -->
+<!-- 百度统计代码 -->
+<!-- 百度统计代码(完) -->
+</body>
+</html>

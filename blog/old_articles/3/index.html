@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+
+<html class="no-js">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"/>
+<meta content="webkit" name="renderer"/>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
+<title>决定性公理介绍 - 哆嗒数学网·博客</title>
+<!-- 使用url函数转换相关路径 -->
+<!--[if lt IE 9]>
+    
+    
+    <![endif]-->
+<!-- 通过自有函数输出HTML头部信息 -->
+<meta content="&amp;nbsp; &amp;nbsp; 很多人都玩过斗主，我也玩。当我在QQ游戏上玩得最HI的时候莫过于三个人都大叫一声&amp;ldquo;明牌！&amp;rdquo;，所有牌的游戏都能被互相看见。&amp;nbsp; &amp;nbs..." name="description"/>
+<meta content="公理,可测" name="keywords"/>
+<meta content="Typecho 1.0/14.10.10" name="generator"/>
+<meta content="duodaa_style" name="template"/>
+<!--MathJax 加载代码 -->
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            extensions: ["tex2jax.js","asciimath2jax.js","TeX/AMSmath.js","Tex/AMSsymbols.js","MathMenu.js","MathZoom.js"],
+            jax: ["input/TeX","output/HTML-CSS"],
+            tex2jax: {
+              inlineMath: [ ['$','$']],
+              displayMath: [ ],
+              processEscapes: true
+            },
+              //"HTML-CSS": { availableFonts:["TeX"], preferredFont: null, webFont: null }
+            "HTML-CSS": { availableFonts: ["TeX"] }
+          });
+    </script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<!--MathJax 加载代码（完） -->
+<style>body {
+    background: #f7f9fc;
+    color: #2b2f36;
+    font-family: "Segoe UI", "Noto Sans", "Helvetica Neue",
+                 Arial, "PingFang SC", "Hiragino Sans GB",
+                 "Microsoft YaHei", sans-serif;
+    line-height: 1.75;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 5px 5px;
+}
+
+article{    text-align: center;
+}
+
+.post-title{padding: 0;
+    margin-bottom: 0.1em;
+
+}
+
+
+.post-title a{
+  color: #1f2a44;
+    font-weight: 650;
+    line-height: 1.3;
+    margin-top: 1.8em;
+    padding: 0;
+    font-size: 2rem;
+    text-decoration: none;
+    
+
+}
+
+img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.site-name.col-mb-12.col-9 a{
+  color: #1f2a44;
+  font-weight: bold;
+  font-size: 1.6rem;
+  text-decoration: none;
+}
+
+.description{
+  color: #1f2a44;
+  font-size: 1.1rem;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+.post-meta {
+  list-style: none; 
+  display: flex;
+  justify-content: center; 
+  gap: 20px; 
+  padding: 0;
+  margin: 0;
+
+}
+
+.post-meta li{
+      font-size: 0.9rem;
+      color: #2b2f36;
+      margin: 0;
+  padding: 0;
+
+}
+
+.post-meta li a{
+      text-decoration: none;
+
+      font-size: 0.9rem;
+      color: #2b2f36;
+      margin: 0;
+  padding: 0;
+
+}
+
+.post-content{
+  text-align: left;
+}</style></head>
+<body>
+<!--[if lt IE 8]>
+    <div class="browsehappy" role="dialog">当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.</div>
+<![endif]-->
+<header class="clearfix" id="header">
+<div class="container">
+<div class="row">
+<div class="site-name col-mb-12 col-9">
+<a href="http://duodaa.com/blog/" id="logo">
+                                        哆嗒数学网·博客                </a>
+<p class="description">数学趣闻大箩筐</p>
+</div>
+
+<div class="col-mb-12">
+</div>
+</div><!-- end .row -->
+</div>
+</header><!-- end #header -->
+<div id="body">
+<div class="container">
+<div class="row">
+<div class="col-mb-12 col-8" id="main" role="main">
+<article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+<h1 class="post-title" itemprop="name headline"><a href="http://duodaa.com/blog/index.php/archives/3/" itemtype="url">决定性公理介绍</a></h1>
+<ul class="post-meta">
+<li itemprop="author" itemscope="" itemtype="http://schema.org/Person">作者: <a href="javascript:void(0)" itemprop="name" rel="author">DuodaaMaster</a></li>
+<li>时间: <time datetime="2014-03-18T02:35:00+00:00" itemprop="datePublished">March 18, 2014</time></li>
+
+</ul>
+<div class="post-content" itemprop="articleBody">
+<p>    很多人都玩过斗主，我也玩。当我在QQ游戏上玩得最HI的时候莫过于三个人都大叫一声“明牌！”，所有牌的游戏都能被互相看见。   </p>
+<p>    这个时候，其实原本三个人的游戏变成了两个人在玩，地主与斗地主的一方。而且，打牌的双方都能知道对方有哪些招能用，哪些招用不了。<br/>
+    <span style="line-height: 1.6em;">这时，我们再大胆假设一下，我们认为双方都足够聪明，出牌都按最优的方式，即不失误。那么其实，这样的一局牌就变得很无趣了，因为当发完牌的同时，游戏的结果已经决定了。</span></p>
+<p>    <span style="line-height: 1.6em;">因为牌都亮着，必然有一方有一种打牌的策略，让他能在最后处于取胜状态。</span></p>
+<p>    我们把这个游戏变得更为无趣。我们把先出牌的一方叫P1，后出牌的一方叫P2。在轮到某人出牌的时候，他只有有限多少出牌的选择。把可能出牌的办法都编号吧，比如当轮到打牌的时候，他就<span style="line-height: 1.6em;">可以说，1号办法应对，2号办法应对,...，n号办法应对...</span></p>
+<p>    于是，好好的斗地主就成了一个叫号的游戏，P1叫我用1号办法，P2叫8号办法,然后P1又叫19号办法，于是得到一串叫号的数列。因为游戏一定会在有限步内结束，于是我们能得到一个有限长数列<span style="line-height: 1.6em;">，这个数列可能指向P1赢的状态，可能指向P2赢的状态。这两种状态，都能分别构成集合。</span></p>
+<p>    如果，这时候我们要改变一下斗地主的规则(比如最后一手牌必须少于5张才算赢)，那么，我们本质上是改变上述所得到的赢的状态所对应的集合。</p>
+<p>    上面说到的东西，在数学中有一个叫博弈论(Game Theory)的分支在做研究，其实就是研究游戏啦。注意到，上面提到的对局有两个特点，第一，第一轮对局者都只能在有限个对局策略里选择，第<span style="line-height: 1.6em;">二，对局一定能在有限的轮次中结论。</span></p>
+<p>    如果策略选择和轮次都是无限的会怎么样呢？现在P1，P2能叫的号是所有自然数，而且每个人都要玩无限轮次。这样，同样在事先规定，哪些数列算赢，哪些数列算输。会怎么样了呢？是不是无<span style="line-height: 1.6em;">论我们怎么改变游戏规则(就是改变赢的状态集合)，这个游戏都在规则确定的同时，结果已经定了呢？</span></p>
+<p>    如果，我们要继承斗地主时的感觉，当然我们要认为结果已经定了！于是，我们就这样认为他定了。这就是决定性公理(Axiom of Determinacy，简称AD)。他和熟知的选择公理(Axiom of Choice)矛盾的。那么和ZF是不是相容呢？可惜，决定性公理<span style="line-height: 1.6em;">能推出ZF是自洽的，所以由哥德尔不完备性定理，ZF+AD是否自洽不能由ZF得到。</span><span style="line-height: 1.6em;">   </span></p>
+<p>    不过，这个公理很难让人认为是“真”的。它除了和选择公理矛盾，由这个决定性公理还能推出一系列太过于“卖萌”的数学“事实”。其中最有趣的是，由它可推出所有实数集合都是勒贝格可<span style="line-height: 1.6em;">测的。这样一来，许多数学成为没意思的了。因此，数学家们还是不太想承认这个过于“萌”的公理。不过，它带来的一系列问题仍有在研究当中。</span></p>
+</div>
+
+</article>
+
+
+</div><!-- end #main-->
+<!-- end #sidebar -->
+</div><!-- end .row -->
+</div>
+</div><!-- end #body -->
+<!-- end #footer -->
+<!-- 百度统计代码 -->
+<!-- 百度统计代码(完) -->
+</body>
+</html>

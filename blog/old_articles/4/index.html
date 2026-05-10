@@ -1,0 +1,226 @@
+<!DOCTYPE HTML>
+
+<html class="no-js">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"/>
+<meta content="webkit" name="renderer"/>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
+<title>独立性证明介绍 - 哆嗒数学网·博客</title>
+<!-- 使用url函数转换相关路径 -->
+<!--[if lt IE 9]>
+    
+    
+    <![endif]-->
+<!-- 通过自有函数输出HTML头部信息 -->
+<meta content="&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;市里发生一起凶杀案，警方断定：凶手是男性受害者是女性凶手做案之前有大量饮酒凶手用双手掐死了受害者&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;受..." name="description"/>
+<meta content="Typecho 1.0/14.10.10" name="generator"/>
+<meta content="duodaa_style" name="template"/>
+<!--MathJax 加载代码 -->
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            extensions: ["tex2jax.js","asciimath2jax.js","TeX/AMSmath.js","Tex/AMSsymbols.js","MathMenu.js","MathZoom.js"],
+            jax: ["input/TeX","output/HTML-CSS"],
+            tex2jax: {
+              inlineMath: [ ['$','$']],
+              displayMath: [ ],
+              processEscapes: true
+            },
+              //"HTML-CSS": { availableFonts:["TeX"], preferredFont: null, webFont: null }
+            "HTML-CSS": { availableFonts: ["TeX"] }
+          });
+    </script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<!--MathJax 加载代码（完） -->
+<style>body {
+    background: #f7f9fc;
+    color: #2b2f36;
+    font-family: "Segoe UI", "Noto Sans", "Helvetica Neue",
+                 Arial, "PingFang SC", "Hiragino Sans GB",
+                 "Microsoft YaHei", sans-serif;
+    line-height: 1.75;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 5px 5px;
+}
+
+article{    text-align: center;
+}
+
+.post-title{padding: 0;
+    margin-bottom: 0.1em;
+
+}
+
+
+.post-title a{
+  color: #1f2a44;
+    font-weight: 650;
+    line-height: 1.3;
+    margin-top: 1.8em;
+    padding: 0;
+    font-size: 2rem;
+    text-decoration: none;
+    
+
+}
+
+img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.site-name.col-mb-12.col-9 a{
+  color: #1f2a44;
+  font-weight: bold;
+  font-size: 1.6rem;
+  text-decoration: none;
+}
+
+.description{
+  color: #1f2a44;
+  font-size: 1.1rem;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+.post-meta {
+  list-style: none; 
+  display: flex;
+  justify-content: center; 
+  gap: 20px; 
+  padding: 0;
+  margin: 0;
+
+}
+
+.post-meta li{
+      font-size: 0.9rem;
+      color: #2b2f36;
+      margin: 0;
+  padding: 0;
+
+}
+
+.post-meta li a{
+      text-decoration: none;
+
+      font-size: 0.9rem;
+      color: #2b2f36;
+      margin: 0;
+  padding: 0;
+
+}
+
+.post-content{
+  text-align: left;
+}</style></head>
+<body>
+<!--[if lt IE 8]>
+    <div class="browsehappy" role="dialog">当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.</div>
+<![endif]-->
+<header class="clearfix" id="header">
+<div class="container">
+<div class="row">
+<div class="site-name col-mb-12 col-9">
+<a href="http://duodaa.com/blog/" id="logo">
+                                        哆嗒数学网·博客                </a>
+<p class="description">数学趣闻大箩筐</p>
+</div>
+
+<div class="col-mb-12">
+</div>
+</div><!-- end .row -->
+</div>
+</header><!-- end #header -->
+<div id="body">
+<div class="container">
+<div class="row">
+<div class="col-mb-12 col-8" id="main" role="main">
+<article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+<h1 class="post-title" itemprop="name headline"><a href="http://duodaa.com/blog/index.php/archives/4/" itemtype="url">独立性证明介绍</a></h1>
+<ul class="post-meta">
+<li itemprop="author" itemscope="" itemtype="http://schema.org/Person">作者: <a href="javascript:void(0)" itemprop="name" rel="author">DuodaaMaster</a></li>
+<li>时间: <time datetime="2014-04-06T21:27:00+00:00" itemprop="datePublished">April 6, 2014</time></li>
+
+</ul>
+<div class="post-content" itemprop="articleBody">
+<p>    市里发生一起凶杀案，警方断定：</p>
+<ol>
+<li>凶手是男性</li>
+<li>受害者是女性</li>
+<li>凶手做案之前有大量饮酒</li>
+<li>凶手用双手掐死了受害者</li>
+</ol>
+<p>    受害者的丈夫在案发现前和受害者有过激烈争吵，并且案发时就在案发现场附近。由于是健美教练，有足够的手力掐死一名成年女生。并且，有很多案件，在夫妻发生激烈冲突后发生的。于是被控方锁定为重大嫌疑人。</p>
+<p>    受害者的丈夫的律师却说：另外一个城市，也是相同情况，但受害人是被一个流窜作案的流动人员杀害的，所以现有证据无法证明嫌疑人就是凶手。</p>
+<p>    当然，目前为止，也无法证明嫌疑人是凶手。</p>
+<p>    所以，控辩双方都要继续找证据，来证明他们相要的结果。</p>
+<p>    其实，数学公理就是“证据”。这种“证据”是一个要求人们先接受，而无需证明的一些命题。至于，为什么要接受，或是因为生活经验，或是因为某些实验结果，再或没有任何理由，反正先接受。但接受的东西之间不能有矛盾的地方。比如，下面一串的东西，不能看成公理。</p>
+<ol>
+<li>世界中存在两个人类小明和小红</li>
+<li>小明是男人</li>
+<li>小红是女人</li>
+<li>小明与小红是相同性别的</li>
+<li>男女是两个不同性别</li>
+</ol>
+<p>    我们再来说一个数学的例子，高等代数中学过数域的定义，我们把这些定义的条件看成公理吧。一个实数子集$F$，满足就是下面几条公理，就称为数域(简单起见，我们只在实数上讨论)。</p>
+<ol>
+<li>$1\in F$</li>
+<li>如果$a,b\in F$，则$a+b\in F$</li>
+<li>如果$a,b\in F$，则$ab\in F$</li>
+<li>如果$a,b∈F$，则$a-b\in F$</li>
+<li>如果$a,b∈F$，$b≠0$，则$a/b\in F$</li>
+</ol>
+<p>    那么，对于一个数域$F$，由这几条公理(加上默认的一些公理，比如实数完备性的公理)，是否能推导出$x^2=2$在$F$上有解？我们说，不能，因为如果我们让$F$为有理数集的时候，有理数集是一个数域，但$x^2=2$无解。那能否推出$x²=2$无解呢，我们说也不能，因为如果我们让$F=R$时，在这个域上是有解的。</p>
+<p>    于是，得到结论“代数方程$x^2=2$有解”这个命题，在数域公理体系下，是无法证明，也无法证伪的。于是这个$x^2=2$是否有解，与数域公理独立。</p>
+<p>    通过上面的讨论，我们知道，我们要一个命题的证明独立性，有一个办法是，找两个模型，两个模型都满足所有公理的条件，但这个命题在其中一个模型里是真命题，在另外一个是假命题（比如前文中的有理数集和$R$）。</p>
+<p>    我们都熟知的连续统假设与ZFC公理系统独立就是用这样的办法证明的。</p>
+<p>    第一个找到让连续统假设是真命题模型是哥德尔，他利用了构造性公理。由于ZF和构造性公理一起还能顺便推出选择公理，于是他证明了连续统假设和ZFC是不矛盾的。</p>
+<p>    找到另一个让连续统假设是假命题模型，要难得多。不过还是由科恩(P.J Cohen)找到了，找的过程中，他用了他本人发明的数学工具力迫法(Forcing)。于是，连续统假设与ZFC公理体系就独立了。由此，科恩获得了1966年的菲尔兹奖，也是唯一一个在数理逻辑领域的菲尔兹奖的获得者。</p>
+<p>    最后补充一点，我们说公理就是“证据”。现代的公理代数学到底是哪些“证据”呢。这些证据被称为ZF公理体系。我这里列举一下，不过我全部用口语不严谨的列举(严谨的要用形式语言)。</p>
+<ol>
+<li><p>公理1 外延公理<br/>
+两个集合有相同的元素则两集合相等</p></li>
+<li><p>公理2 正规公理<br/>
+每个非空集合$x$ 都包含一个元素$y\in x$ ，使得$x$和$y$不相交。</p></li>
+
+<li><p>公理4 配对公理<br/>
+$x,y$都是集合，则$\{x,y\}$也是集合。</p></li>
+<li><p>公理5 并集公理<br/>
+一簇集合的并，还是集合。</p></li>
+<li><p>公理6 替代公理模式<br/>
+一个集合被映射后，得到到的像还是一个集合。这个公理之所以称为模式，无穷多的映射，对同一个集和都能产生像，这些像都是集合。所以这其实无穷多条公理。</p></li>
+<li><p>公理7 无穷公理<br/>
+存在一个无限个元素的集合(所有自然数在一起是集合)。</p></li>
+<li><p>公理8 幂集公理<br/>
+一个集合的子集做元素，能形成一个集合。</p></li>
+</ol>
+<p>上面8条就构成ZF公理体系，再加上下面的选择公理，就是ZFC公理体系。</p>
+<ol start="9">
+<li>公理9 选择公理<br/>
+对一簇集合，我们可以每一个集合里抓出一个来，形成一个新集合。</li>
+</ol>
+</div>
+
+</article>
+
+
+</div><!-- end #main-->
+<!-- end #sidebar -->
+</div><!-- end .row -->
+</div>
+</div><!-- end #body -->
+<!-- end #footer -->
+<!-- 百度统计代码 -->
+<!-- 百度统计代码(完) -->
+</body>
+</html>
