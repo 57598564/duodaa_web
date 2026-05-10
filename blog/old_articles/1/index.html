@@ -8,9 +8,12 @@
 <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
 <title>如何让子空间“变成”完备度量空间 - 哆嗒数学网·博客</title>
 <!-- 使用url函数转换相关路径 -->
-<!--[if lt IE 9]>
-    
-    
+<!--[if lt IE 9]>
+
+    
+
+    
+
     <![endif]-->
 <!-- 通过自有函数输出HTML头部信息 -->
 <meta content="&amp;nbsp; &amp;nbsp; 一个度量空间$(X,d)$，如果对于度量$d$，每一个柯西列都收敛，我们就说$X$是完备度函空间。于是我们知道$\mathbb{R}$在通常度量$d(x,y)=|x-..." name="description"/>
@@ -19,20 +22,27 @@
 <meta content="duodaa_style" name="template"/>
 <!--MathJax 加载代码 -->
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-            extensions: ["tex2jax.js","asciimath2jax.js","TeX/AMSmath.js","Tex/AMSsymbols.js","MathMenu.js","MathZoom.js"],
-            jax: ["input/TeX","output/HTML-CSS"],
-            tex2jax: {
-              inlineMath: [ ['$','$']],
-              displayMath: [ ],
-              processEscapes: true
-            },
-              //"HTML-CSS": { availableFonts:["TeX"], preferredFont: null, webFont: null }
-            "HTML-CSS": { availableFonts: ["TeX"] }
-          });
-    </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script>
+                    window.MathJax = {
+                        tex: {
+                        inlineMath: [['$', '$']],
+                        displayMath: [],
+                        processEscapes: true,
+                        packages: ['base', 'ams', 'newcommand']  // 基础包 + AMS 扩展
+                        },
+                        options: {
+                        enableMenu: true,      // 对应 v2 的 MathMenu.js
+                        renderActions: {
+                            zoom: ['MathZoom']   // 对应 v2 的 MathZoom.js
+                        }
+                        },
+                        chtml: {
+                        fontURL: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2',
+                        availableFonts: ['tex']  // 对应 v2 的 "HTML-CSS": { availableFonts: ["TeX"] }
+                        }
+                    };
+                    </script>
+<script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" type="text/javascript">
 <!--MathJax 加载代码（完） -->
 <style>body {
     background: #f7f9fc;
@@ -125,14 +135,17 @@ img {
   text-align: left;
 }</style></head>
 <body>
-<!--[if lt IE 8]>
-    <div class="browsehappy" role="dialog">当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.</div>
+<!--[if lt IE 8]>
+
+    <div class="browsehappy" role="dialog">当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.</div>
+
 <![endif]-->
 <header class="clearfix" id="header">
 <div class="container">
 <div class="row">
 <div class="site-name col-mb-12 col-9">
-<a href="http://duodaa.com/blog/" id="logo">
+<a href="http://duodaa.com/blog/" id="logo">
+
                                         哆嗒数学网·博客                </a>
 <p class="description">数学趣闻大箩筐</p>
 </div>
