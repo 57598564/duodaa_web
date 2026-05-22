@@ -1,38 +1,383 @@
 
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>导出的页面</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>关于哆嗒数学网-哆嗒数学网</title>
+<style>:root {
+  --bg: #f6f9ff;
+  --card: #ffffff;
+  --primary: #2b6fff;
+  --text: #1f2a44;
+  --muted: #6b7a90;
+  --border: #e6ecf5;
+}
 
-<style>
-body{
-    max-width:900px;
-    margin:40px auto;
-    padding:20px;
-    font-family:Arial,Helvetica,sans-serif;
-    line-height:1.8;
-    color:#333;
-}
-img{
-    max-width:100%;
-}
-pre{
-    background:#f4f4f4;
-    padding:12px;
-    overflow:auto;
-}
-code{
-    background:#f4f4f4;
-    padding:2px 4px;
-}
-</style>
+* { box-sizing: border-box; }
 
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ===== header ===== */
+header {
+  background: white;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav a {
+  margin-left: 16px;
+  text-decoration: none;
+  color: var(--muted);
+  transition: 0.2s;
+}
+
+.nav a:hover {
+  color: var(--primary);
+}
+
+.logo {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.logo * {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+/* ===== layout ===== */
+.container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 24px;
+}
+
+.article {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 36px;
+}
+
+.content {
+  font-size: 16px;
+}
+
+.content p {
+  margin: 18px 0;
+}
+
+.content h2 {
+  margin-top: 36px;
+  margin-bottom: 12px;
+  font-size: 24px;
+  padding-left: 12px;
+}
+
+.content h3 {
+  margin-top: 28px;
+  font-size: 20px;
+}
+
+.content a {
+  color: var(--primary);
+}
+
+.content code {
+  background: #eef3ff;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.content pre {
+  background: #0f172a;
+  color: #f8fafc;
+  padding: 18px;
+  border-radius: 12px;
+  overflow-x: auto;
+  font-size: 14px;
+}
+
+.content img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+
+
+/* ===== post ===== */
+.post {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 18px;
+  transition: 0.2s;
+}
+
+.post:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.post h2 {
+  margin: 0 0 10px;
+}
+
+.post h2 a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+.post p {
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ===== sidebar ===== */
+.sidebar .box {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+/* ====== 近期文章 ====== */
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list li {
+  border-bottom: 1px dashed var(--border);
+}
+
+.list li:last-child {
+  border-bottom: none;
+}
+
+.list a {
+  display: block;
+  padding: 10px 0;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.list a:hover {
+  color: var(--primary);
+  padding-left: 4px;
+}
+
+.archive-title{
+  font-size:30px;
+  margin-bottom:30px;
+}
+
+.archive-list{
+  display:flex;
+  flex-direction:column;
+}
+
+.archive-item{
+  display:flex;
+  align-items:center;
+
+  gap:24px;
+
+  padding:16px 0;
+
+  border-bottom:1px solid var(--border);
+}
+
+.archive-date{
+  width:180px;
+
+  color:var(--muted);
+
+  font-size:14px;
+
+  flex-shrink:0;
+}
+
+.archive-link{
+  text-decoration:none;
+
+  color:var(--text);
+
+  font-size:18px;
+  font-weight:500;
+
+  transition:.2s;
+}
+
+.archive-link:hover{
+  color:var(--primary);
+}
+
+
+.back{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin-top:36px;
+  text-decoration:none;
+  color:var(--primary);
+  font-size:15px;
+  font-weight:500;
+  transition:.2s;
+}
+
+.back:hover{
+  opacity:.8;
+  transform:translateX(-2px);
+}
+
+/* ===== 上一篇 / 下一篇 ===== */
+
+.nav-posts{
+
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.nav-posts a{
+
+  display:flex;
+  align-items:center;
+  min-height:20px;
+  padding:5px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:8px;
+  text-decoration:none;
+  color:var(--text);
+  line-height:1.6;
+  transition:.2s;
+}
+
+.nav-posts a:hover{
+
+  border-color:var(--primary);
+  transform:translateY(-2px);
+  box-shadow:0 6px 18px rgba(43,111,255,.08);
+}
+
+/* 上一篇 */
+
+.prev{
+  justify-content:flex-start;
+  text-align:left;
+}
+
+/* 下一篇 */
+
+.next{
+  justify-content:flex-end;
+  text-align:right;
+}
+
+
+/* responsive */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+   .archive-item{
+    gap:14px;
+  }
+
+  .archive-link{
+    font-size:16px;
+  }
+}</style>
+<link href="./css.css" onerror="this.remove()" rel="stylesheet"/>
+<link href="../../css.css" onerror="this.remove()" rel="stylesheet"/>
 </head>
 <body>
+<header>
+<div class="nav">
+<div class="logo"><a href="/blog">哆嗒数学网·博客</a></div>
+<div>
+<a href="/blog">首页</a>
+<a href="/blog/archive.html">归档</a>
+<a href="/blog/old_articles">老文章</a>
+<a href="/blog/about.html">关于</a>
+</div>
+</div>
+</header>
+<!-- ====== 主体 ====== -->
+<div class="container">
+<!-- ====== 文章 ====== -->
+<article class="article">
+<div class="meta">
+      2026-05-22 17:04:52
+    </div>
+<h1>关于哆嗒数学网</h1>
+<div class="content">
+<p>
+微信公众号、B站、头条、小红书、油管均同号：哆嗒数学网这里是哆嗒数学网——一个属于数学爱好者的交流社区，也是分享数学经验、探讨数学思想、感受数学之美的精神家园。无论你是刚刚接触数学的新手，还是已经在数论、几何、代数、分析等领域不断深入的探索者；无论你是因为一道题而困惑，还是因为一个优美的证明而激动，都欢迎来到这里。在这里，你不必担心自己只是一个孤独思考的“数学岛民”。每一个曾被难题困扰的人，每一个因发现规律而欣喜的人，都能在哆嗒数学网找到共鸣。这里有无数热爱数学的伙伴，愿意与你分享灵感、交流见解、讨论问题，也愿意陪你一起经历从迷茫到顿悟的过程。数学不仅仅是公式与计算，它更是一种思维方式，一种理解世界的语言。哆嗒数学网希望成为的不只是一个解题与学习的平台，更是一个能够感受到数学魅力、体会数学文化、激发探索热情的地方。也许一次讨论，会让你重新理解一个概念；也许一句点拨，会成为你深入数学世界的起点。在这里，你可以自由提出问题，分享发现，记录思考，展示证明，与来自不同地区、不同背景却同样热爱数学的人并肩前行。因为真正的数学探索，从来都不是一个人的孤独远航。愿你在哆嗒数学网收获知识、收获思考、收获同行者。愿每一个热爱数学的人，都能在这片广阔的数学海洋中找到属于自己的航向，与千万同伴一起，继续向更深、更远的地方探索。
+</p>
+</div>
+<!-- 返回首页 -->
+<a class="back" href="/blog">
+      ← 返回首页
+    </a>
+<!-- 上一篇下一篇 -->
+<div class="nav-posts">
+<a class="prev" href="/blog\articles\#">
+        ← 上一篇：这是第一篇文章
+      </a>
+<a class="next" href="/blog\articles\2026-05-14-15-39-54-736">
+        下一篇：我们又建设了一部分... →
+      </a>
+</div>
+</article>
+<!-- ====== 右侧栏 ====== -->
+<aside class="sidebar">
+<div class="box">
+<h3>关于本站</h3>
+<p>
+        本站分享和数学有关系的趣事！
+      </p>
+</div>
+<div class="box">
+<h3>近期文章</h3>
+<ul class="list">
+        <li><a href="/blog\articles\2026-05-22-17-04-52-636" target="_blank">关于哆嗒数学网</a></li><li><a href="/blog\articles\2026-05-14-15-39-54-736" target="_blank">我们又建设了一部分...</a></li><li><a href="/blog\articles\2026-05-13-13-31-53-731" target="_blank">本网站正在建设中...</a></li>
+        
 
-<h3><strong>微信公众号、B站、头条、小红书、油管均同号：哆嗒数学网</strong></h3><p><br></p><p>这里是哆嗒数学网——一个属于数学爱好者的交流社区，也是分享数学经验、探讨数学思想、感受数学之美的精神家园。无论你是刚刚接触数学的新手，还是已经在数论、几何、代数、分析等领域不断深入的探索者；无论你是因为一道题而困惑，还是因为一个优美的证明而激动，都欢迎来到这里。</p><p><br></p><p>在这里，你不必担心自己只是一个孤独思考的“数学岛民”。每一个曾被难题困扰的人，每一个因发现规律而欣喜的人，都能在哆嗒数学网找到共鸣。这里有无数热爱数学的伙伴，愿意与你分享灵感、交流见解、讨论问题，也愿意陪你一起经历从迷茫到顿悟的过程。</p><p><br></p><p>数学不仅仅是公式与计算，它更是一种思维方式，一种理解世界的语言。哆嗒数学网希望成为的不只是一个解题与学习的平台，更是一个能够感受到数学魅力、体会数学文化、激发探索热情的地方。也许一次讨论，会让你重新理解一个概念；也许一句点拨，会成为你深入数学世界的起点。</p><p><br></p><p>在这里，你可以自由提出问题，分享发现，记录思考，展示证明，与来自不同地区、不同背景却同样热爱数学的人并肩前行。因为真正的数学探索，从来都不是一个人的孤独远航。</p><p>愿你在哆嗒数学网收获知识、收获思考、收获同行者。</p><p><br></p><p> 愿每一个热爱数学的人，都能在这片广阔的数学海洋中找到属于自己的航向，与千万同伴一起，继续向更深、更远的地方探索。</p><p><br></p><p><br></p><p><br></p>
-
+      </ul>
+</div>
+</aside>
+</div>
 </body>
 </html>
