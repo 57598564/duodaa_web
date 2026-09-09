@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>哆嗒 · 内容工作台</title><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css"><script defer src="/app.js"></script></head>
+<body>
+<aside class="sidebar">
+  <div class="brand"><span class="brand-icon">∑</span><div><strong>哆嗒 · 内容工作台</strong><small>写下每一次发现</small></div></div>
+  <button id="new-article" class="primary wide">＋ 新建文章</button>
+  <div class="library-tabs"><button class="active" data-library="articles">已发布</button><button data-library="drafts">本地草稿</button></div>
+  <input id="search" type="search" placeholder="搜索文章标题" aria-label="搜索文章">
+  <div id="library" class="library"><p class="empty">选择网站目录后查看文章</p></div>
+  <div class="sidebar-bottom"><button id="settings-button">⚙ 网站设置</button><button id="history-button">↻ 发布记录</button><button id="exit-button">退出工具</button><p id="site-label">尚未选择网站目录</p></div>
+</aside>
+<main class="workspace">
+  <header class="topbar"><div><span id="document-state" class="badge">新文章</span><span id="save-state" class="muted">内容仅保存在本机</span></div><div class="actions"><button id="save-draft">保存草稿</button><button id="preview-button">预览</button><button id="publish-button" class="primary">上传并发布 <span aria-hidden="true">↗</span></button></div></header>
+  <div class="work-scroll">
+    <div class="mode-tabs"><button id="manual-mode" class="active">✎ 手动编写</button><button id="wechat-mode">↙ 导入微信文章</button></div>
+    <section id="wechat-panel" class="import-panel" hidden><label for="wechat-url">微信公众号文章链接</label><div class="input-action"><input id="wechat-url" type="url" placeholder="https://mp.weixin.qq.com/s/…"><button id="import-button" class="primary">获取到编辑区</button></div><p>导入正文和图片后，仍可自由修改标题、样式和图片尺寸。</p></section>
+    <section class="document-sheet">
+      <input id="title" class="title-input" placeholder="给这篇文章起个标题" maxlength="200" aria-label="文章标题">
+      <div class="metadata"><label>作者<input id="author" placeholder="作者或公众号名称" maxlength="100"></label><label>发布日期<input id="published-at" type="datetime-local"></label></div>
+      <details class="seo"><summary>摘要与原文链接 <span>用于搜索结果和文章列表</span></summary><label>文章摘要<textarea id="description" maxlength="300" rows="2" placeholder="留空时自动取正文摘要；建议 80–160 字"></textarea></label><label>原文链接（可选）<input id="source-url" type="url" placeholder="导入微信文章后会自动保留"></label></details>
+      <div class="editor-toolbar" role="toolbar" aria-label="文章格式工具">
+        <select id="block-format" aria-label="段落样式"><option value="p">正文</option><option value="h2">大标题</option><option value="h3">小标题</option><option value="blockquote">引用</option><option value="pre">代码块</option></select>
+        <select id="font-family" aria-label="字体"><option value="">默认字体</option><option value="Microsoft YaHei">微软雅黑</option><option value="SimSun">宋体</option><option value="KaiTi">楷体</option><option value="Arial">Arial</option><option value="monospace">等宽字体</option></select>
+        <select id="font-size" aria-label="文字大小"><option value="16">16 px</option><option value="12">12 px</option><option value="14">14 px</option><option value="18">18 px</option><option value="20">20 px</option><option value="24">24 px</option><option value="32">32 px</option></select>
+        <span class="divider"></span>
+        <button data-command="bold" title="加粗 (Ctrl+B)"><b>B</b></button><button data-command="italic" title="斜体 (Ctrl+I)"><i>I</i></button><button data-command="underline" title="下划线"><u>U</u></button><button data-command="strikeThrough" title="删除线"><s>S</s></button>
+        <label class="color-tool" title="文字颜色">A<input id="text-color" type="color" value="#24364b" aria-label="文字颜色"></label><label class="color-tool" title="文字背景">▰<input id="highlight-color" type="color" value="#fff0aa" aria-label="文字背景颜色"></label>
+        <span class="divider"></span>
+        <button data-command="justifyLeft" title="左对齐">☰</button><button data-command="justifyCenter" title="居中">≡</button><button data-command="justifyRight" title="右对齐">☷</button><button data-command="insertUnorderedList" title="无序列表">• 列表</button><button data-command="insertOrderedList" title="有序列表">1. 列表</button>
+        <select id="line-height" aria-label="行距"><option value="1.8">行距 1.8</option><option value="1.4">行距 1.4</option><option value="1.6">行距 1.6</option><option value="2">行距 2.0</option><option value="2.4">行距 2.4</option></select>
+        <button id="link-button" title="插入链接">链接</button><button id="image-button" title="插入图片">▧ 图片</button><button id="formula-button" title="插入公式">ƒ 公式</button><button data-command="removeFormat" title="清除所选文字格式">清除格式</button><button data-command="undo" title="撤销">↶</button><button data-command="redo" title="重做">↷</button>
+      </div>
+      <div id="editor" class="editor" contenteditable="true" role="textbox" aria-multiline="true" aria-label="文章正文" data-placeholder="从这里开始写作，也可以直接粘贴文字和图片…"></div>
+      <div id="image-panel" class="image-panel" hidden><strong>图片设置</strong><label>宽度 <input id="image-width" type="number" min="24" max="2400"> px</label><button id="image-original">原始大小</button><button id="image-fit">适应正文</button><select id="image-align" aria-label="图片对齐"><option value="left">左对齐</option><option value="center">居中</option><option value="right">右对齐</option></select><label class="alt-field">图片说明<input id="image-alt" placeholder="描述图片内容，帮助阅读和搜索"></label><button id="image-delete" class="danger">删除图片</button><small>可拖动图片右下角的蓝色手柄调整大小。</small></div>
+      <footer class="editor-footer"><span id="word-count">0 字</span><span>支持粘贴图片 / Ctrl+S 保存草稿</span></footer>
+    </section>
+  </div>
+  <section id="status-panel" class="status-panel" hidden role="status" aria-live="polite"><span class="status-dot"></span><div><strong id="status-title">正在处理</strong><p id="status-message"></p></div><button id="status-close" hidden>收起</button></section>
+</main>
+<input id="image-file" type="file" accept="image/png,image/jpeg,image/gif,image/webp" multiple hidden>
+<div id="resize-handle" class="resize-handle" hidden title="拖动调整图片尺寸"></div>
+
+<dialog id="settings-dialog"><form id="settings-form"><div class="dialog-heading"><div><h2>网站设置</h2><p>选择这台电脑上存放网站内容的主文件夹。</p></div><button type="button" data-close="settings-dialog" aria-label="关闭">×</button></div>
+  <label class="required">网站内容主文件夹<div class="input-action"><input id="setting-root" name="site_root" required placeholder="例如 D:\我的网站\duodaa_web"><button type="button" id="browse-root">选择文件夹…</button></div></label>
+  <p class="field-help">应包含 blog/articles、blog/index.html 和 Git 仓库。换电脑后在这里重新选择目录。</p>
+  <div class="form-grid"><label>网站地址<input name="site_url" type="url" required placeholder="https://duodaa.com"></label><label>网站名称<input name="site_name" required></label><label>默认作者<input name="author"></label><label>近期文章数量<input name="recent_count" type="number" min="1" max="20"></label></div>
+  <details><summary>Git 与广告设置</summary><p class="field-help">使用电脑已有的 Git 和登录信息。上传会推送当前分支，也包括此前尚未推送的本地提交。</p><div class="form-grid"><label>Git 远程名称<input name="remote" placeholder="origin"></label><label>广告发布商 ID<input name="ad_client"></label><label>Git 提交姓名<input name="git_name" placeholder="留空使用现有 Git 配置"></label><label>Git 提交邮箱<input name="git_email" type="email" placeholder="留空使用现有 Git 配置"></label></div><label>Git 程序（通常无需填写）<input name="git_path" placeholder="自动查找；仅找不到 Git 时填写 git.exe 路径"></label></details>
+  <div id="repo-status" class="repo-status"></div><div class="dialog-actions"><button type="button" data-close="settings-dialog">取消</button><button class="primary" type="submit">保存设置</button></div></form></dialog>
+
+<dialog id="preview-dialog" class="preview-dialog"><div class="dialog-heading"><div><h2>发布预览</h2><p id="preview-summary"></p></div><div class="actions"><button id="desktop-preview" class="active">桌面</button><button id="mobile-preview">手机</button><button data-close="preview-dialog">关闭</button></div></div><div class="preview-wrap"><iframe id="preview-frame" title="文章发布预览" sandbox="allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe></div><div class="dialog-actions"><small>公式在此预览中显示源码，正式页面会排版显示。</small><button id="publish-preview" class="primary">确认内容并上传</button></div></dialog>
+<dialog id="history-dialog"><div class="dialog-heading"><div><h2>发布记录</h2><p>推送失败时，本地提交和文章会保留。</p></div><button data-close="history-dialog">关闭</button></div><div id="history-list"></div></dialog>
+<dialog id="insert-dialog"><form id="insert-form"><div class="dialog-heading"><h2 id="insert-title">插入链接</h2><button type="button" data-close="insert-dialog">×</button></div><label id="insert-label">链接地址<input id="insert-value" required></label><p id="insert-help" class="field-help"></p><div class="dialog-actions"><button type="button" data-close="insert-dialog">取消</button><button type="submit" class="primary">插入</button></div></form></dialog>
+<dialog id="replace-dialog"><div class="dialog-heading"><h2>保留当前内容？</h2></div><p>当前编辑内容尚未保存，先保存为草稿再继续。</p><div class="dialog-actions"><button id="replace-cancel">返回编辑</button><button id="replace-discard">不保存，继续</button><button id="replace-save" class="primary">保存草稿并继续</button></div></dialog>
+</body></html>

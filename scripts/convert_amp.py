@@ -31,14 +31,16 @@ def clean_css(css):
     return re.sub(r'\s+', ' ', css).strip()
 
 
-def convert(page):
+def convert(page, root=None, site_url='https://duodaa.com', site_name='哆嗒数学网', ad_client='ca-pub-9319230211682138'):
+    root = Path(root or ROOT).resolve()
+    site_url = site_url.rstrip('/')
     soup = BeautifulSoup(page.read_text(encoding='utf-8'), 'html.parser')
     if soup.html.has_attr('amp'):
         repair(soup)
         page.write_text(str(soup).rstrip() + '\n', encoding='utf-8')
         return False
     title = soup.title.get_text() if soup.title else '哆嗒数学网'
-    relative = page.relative_to(ROOT).as_posix()
+    relative = page.relative_to(root).as_posix()
     titles = {'blog/index.html': '数学趣闻与故事 - 哆嗒数学网·博客',
               'blog/archive.html': '近期文章归档 - 哆嗒数学网',
               'blog/about.html': '关于我们 - 哆嗒数学网'}
@@ -54,10 +56,10 @@ def convert(page):
     first_image = soup.find('img', src=True)
     image_url = first_image['src'] if first_image else None
     if image_url and image_url.startswith('/'):
-        image_url = 'https://duodaa.com' + image_url
+        image_url = site_url + image_url
     css_parts = []
     for link in soup.head.find_all('link', rel='stylesheet'):
-        path = ROOT / link['href'].lstrip('/')
+        path = root / link['href'].lstrip('/')
         if path.exists():
             css_parts.append(path.read_text(encoding='utf-8'))
     css_parts += [tag.get_text() for tag in soup.head.find_all('style')]
@@ -83,7 +85,7 @@ def convert(page):
     for tag in soup.body.find_all('img'):
         source = tag.get('src', '')
         width, height = tag.get('width'), tag.get('height')
-        local = ROOT / source.lstrip('/')
+        local = root / source.lstrip('/')
         if source.startswith('/') and local.is_file():
             try:
                 with Image.open(local) as image:
@@ -172,15 +174,15 @@ def convert(page):
     add('meta', name='description', content=description)
     if relative == '404.html':
         add('meta', name='robots', content='noindex, follow')
-    path = '/' + page.relative_to(ROOT).as_posix()
+    path = '/' + page.relative_to(root).as_posix()
     if path.endswith('index.html'):
         path = path[:-10]
-    add('link', rel='canonical', href='https://duodaa.com' + path)
-    url = 'https://duodaa.com' + path
+    add('link', rel='canonical', href=site_url + path)
+    url = site_url + path
     is_article = bool(re.match(r'blog/(?:old_articles/\d+|articles/[^/]+)/index\.html$', relative))
     for prop, value in {'og:title': title, 'og:description': description, 'og:url': url,
                         'og:type': 'article' if is_article else 'website',
-                        'og:site_name': '哆嗒数学网', 'og:locale': 'zh_CN'}.items():
+                        'og:site_name': site_name, 'og:locale': 'zh_CN'}.items():
         add('meta', property=prop, content=value)
     add('meta', name='twitter:card', content='summary_large_image' if image_url else 'summary')
     if image_url:
@@ -189,7 +191,7 @@ def convert(page):
               'name': title, 'description': description, 'url': url, 'inLanguage': 'zh-CN'}
     if is_article:
         schema.update({'headline': title, 'mainEntityOfPage': url,
-                       'publisher': {'@type': 'Organization', 'name': '哆嗒数学网', 'url': 'https://duodaa.com/'}})
+                       'publisher': {'@type': 'Organization', 'name': site_name, 'url': site_url + '/'}})
         if published:
             schema['datePublished'] = published
         if image_url:
@@ -211,7 +213,7 @@ def convert(page):
     fallback.string = 'body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}'
     noscript.append(fallback)
     add('style', **{'amp-custom': ''}).string = css
-    ads = soup.new_tag('amp-auto-ads', attrs={'type': 'adsense', 'data-ad-client': 'ca-pub-9319230211682138'})
+    ads = soup.new_tag('amp-auto-ads', attrs={'type': 'adsense', 'data-ad-client': ad_client})
     soup.body.insert(0, ads)
     repair(soup)
     page.write_text(str(soup).rstrip() + '\n', encoding='utf-8')
