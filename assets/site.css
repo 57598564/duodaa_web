@@ -1,0 +1,29 @@
+/* Shared reading and mobile improvements, applied after each original theme. */
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-wrap: anywhere; }
+main, article, .container > *, .content, .post-content { min-width: 0; }
+.content, .post-content { line-height: 1.8; }
+.content img, .post-content img { max-width: 100% !important; height: auto !important; }
+pre, .ql-code-block-container { overflow-x: auto; white-space: pre; }
+.ql-code-block-container { padding: 18px; background: #0f172a; color: #f8fafc; border-radius: 12px; font: 14px/1.6 monospace; }
+mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; max-width: 100%; padding: 4px 0; }
+table { display: block; max-width: 100%; overflow-x: auto; }
+.nav, .post-meta { flex-wrap: wrap; gap: 12px; }
+.nav { align-items: center; }
+.nav > div:last-child { display: flex; flex-wrap: wrap; gap: 12px; }
+.nav a { margin-left: 0; }
+.legacy-archive { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
+.legacy-archive .list a { font-size: 16px; line-height: 1.6; }
+a:focus-visible, button:focus-visible { outline: 3px solid #2458be; outline-offset: 4px; }
+@media (max-width: 600px) {
+  .article, .post { padding: 18px; }
+  .container { margin-top: 18px; }
+  .archive-item { align-items: flex-start; flex-direction: column; gap: 6px; }
+  .archive-date { width: auto; }
+  .nav-posts { grid-template-columns: 1fr; }
+  .post-title a { font-size: 1.5rem; }
+  .post-meta { gap: 6px 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

@@ -1,0 +1,22 @@
+:root { color-scheme: light; font-family: system-ui, "Microsoft YaHei", sans-serif; color: #1f2a44; background: #f6f9ff; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { width: min(100% - 32px, 640px); margin: 40px auto; text-align: center; }
+h1 { margin: 8px 0; font-size: clamp(28px, 6vw, 40px); }
+header p { color: #52647c; line-height: 1.7; }
+.eyebrow { font-size: 14px; letter-spacing: 0.2em; }
+.graph-card { padding: 16px; background: white; border: 1px solid #e6ecf5; border-radius: 20px; }
+.curve-slide { margin: 0; }
+.curve-slide figcaption { padding: 4px 8px; font-size: clamp(12px, 2.8vw, 18px); line-height: 1.6; white-space: normal; }
+.hint { color: #52647c; font-size: 13px; }
+.intro { margin: 40px 0; line-height: 1.8; text-align: left; }
+.intro h2 { font-size: 22px; }
+button, a { font: inherit; }
+button { padding: 10px 20px; border: 1px solid #c9d7f0; border-radius: 24px; color: #2458be; background: #f6f9ff; cursor: pointer; }
+button:disabled { opacity: 0.5; cursor: wait; }
+nav { display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap; margin-top: 24px; }
+a { color: #2458be; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.primary { padding: 13px 24px; background: #2b6fff; color: white; border-radius: 12px; }
+:focus-visible { outline: 3px solid #174cbb; outline-offset: 4px; }
+@media (max-width: 480px) { main { margin: 24px auto; } .graph-card { padding: 8px; } }

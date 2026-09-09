@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="哆嗒数学网，用有趣的函数曲线、数学故事与知识分享，带你发现数学之美。探索 16 种经典函数，阅读数学趣闻与经典文章。">
+<title>哆嗒数学网 - 发现数学之美，分享数学趣闻与故事</title>
+<link rel="stylesheet" href="/assets/home.css">
+</head>
+<body>
+<main>
+<header><p class="eyebrow">发现数学之美</p><h1>哆嗒数学网</h1><p>一个妙趣的数学世界，从一条曲线开始。</p></header>
+<section class="graph-card" aria-label="数学函数探索">
+<amp-carousel width="600" height="690" layout="responsive" type="slides" controls loop aria-label="16 种经典数学函数，左右滑动或使用箭头切换">
+{{SLIDES}}
+</amp-carousel>
+<p class="hint">左右滑动或点击箭头，探索 16 种经典函数。</p>
+</section>
+<nav aria-label="网站导航"><a class="primary" href="/blog/">进入博客 →</a><a href="/blog/old_articles/">浏览经典文章</a></nav>
+<section class="intro"><h2>数学趣闻与故事</h2><p>从一条曲线到一个巧妙的证明，数学的乐趣藏在每一次发现里。在哆嗒数学网，阅读数学故事、探索经典问题，感受数学与生活的联系。</p><a href="/blog/archive.html">近期文章</a> · <a href="/blog/about.html">关于哆嗒数学网</a></section>
+</main>
+</body>
+</html>
