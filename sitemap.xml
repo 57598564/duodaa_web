@@ -1,9 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://duodaa.com/</loc>
-  </url>
-  <url>
     <loc>https://duodaa.com/blog/about.html</loc>
   </url>
   <url>
@@ -23,6 +20,9 @@
   </url>
   <url>
     <loc>https://duodaa.com/blog/articles/2026-07-21-22-07-03-407/</loc>
+  </url>
+  <url>
+    <loc>https://duodaa.com/blog/articles/2026-09-10-11-09-47-bae4d639/</loc>
   </url>
   <url>
     <loc>https://duodaa.com/blog/</loc>
@@ -1637,5 +1637,8 @@
   </url>
   <url>
     <loc>https://duodaa.com/blog/old_articles/</loc>
+  </url>
+  <url>
+    <loc>https://duodaa.com/</loc>
   </url>
 </urlset>
